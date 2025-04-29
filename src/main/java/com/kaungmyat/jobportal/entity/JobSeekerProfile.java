@@ -3,6 +3,7 @@ package com.kaungmyat.jobportal.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "job_seeker_profile")
@@ -147,6 +148,12 @@ public class JobSeekerProfile {
 
     public void setSkills(List<Skills> skills) {
         this.skills = skills;
+    }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (profilePhoto == null || Optional.ofNullable(userAccountId).orElse(0) == 0) return null;
+        return "/photos/candidate/" + userAccountId + "/" + profilePhoto;
     }
 
     @Override
