@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface RecruiterProfileService {
     public Optional<RecruiterProfile> getOne(Integer id);
     public RecruiterProfile addNew(RecruiterProfile recruiterProfile);
+    public RecruiterProfile getCurrentRecruiterProfile();
 }

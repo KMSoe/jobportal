@@ -8,5 +8,6 @@ public interface UsersService {
     public Users addNew(Users users);
     public Object getCurrentUserProfile();
     public Users getCurrentUser();
+    public Users findByEmail(String currentUsername);
     public Optional<Users> getUserByEmail(String email);
  }

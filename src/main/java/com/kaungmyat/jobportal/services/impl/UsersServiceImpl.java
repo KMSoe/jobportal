@@ -93,6 +93,12 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    public Users findByEmail(String currentUsername) {
+        return usersRepository.findByEmail(currentUsername).orElseThrow(() -> new UsernameNotFoundException("User not " +
+                "found"));
+    }
+
+    @Override
     public Optional<Users> getUserByEmail(String email) {
         return usersRepository.findByEmail(email);
     }
